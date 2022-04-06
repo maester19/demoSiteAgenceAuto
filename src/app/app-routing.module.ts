@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { ElmtComponent } from './elmt/elmt.component';
+import { ItemPageComponent } from './item-page/item-page.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ListPageComponent } from './list-page/list-page.component';
 
 const routes: Routes = [
-  { path: '', component: AppComponent },
-  { path: 'voitures', component: ListPageComponent }
+  { path: 'voitures', component: ListPageComponent },
+  { path: '', component: LandingPageComponent },
+  { path: 'pageDetail', component: ItemPageComponent }
 ];
 
 @NgModule({

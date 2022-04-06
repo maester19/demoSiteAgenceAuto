@@ -1,8 +1,13 @@
-<div class="auto-card">
-    <h2>{{ voiture.title | uppercase }}</h2>
-    <p>{{ voiture.description }}</p>
-    <img [src]="voiture.imageUrl" [alt]="voiture.title">
-    <p>Mis en ligne le {{ voiture.createdDate | date: 'dd MMMM yyyy, à HH:mm'}}</p>
-    <p><span>🤌 {{ voiture.price | currency: 'XAF' }}</span></p>
-    <a class="btn btn-outline-primary" routerLink="page">{{ buttonText }}</a>
-</div>
+
+    <div class="portfolio-wrap auto-card">
+      <img [src]="voiture.imageUrl" class="img-fluid" [alt]="voiture.title">
+      <div class="portfolio-info">
+        <h4>{{ voiture.title | uppercase }}</h4>
+        <p>{{ voiture.description }}</p>
+        <p>Mis en ligne le {{ voiture.createdDate | date: 'dd MMMM yyyy, à HH:mm'}}</p>
+        <p><span>🤌 {{ voiture.price | currency: 'XAF' }}</span></p>
+        <div class="portfolio-links">
+          <button class="btn btn-outline-primary" (click)="onContinue()">{{ buttonText }}</button>
+        </div>
+      </div>
+    </div>

@@ -1,33 +1,16 @@
+<section id="portfolio" class="portfolio">
+    <div class="container">
 
-  <div class="container">
-      <!-- Start Single Feature -->
-      <div class="single-feature mt-5 center">
-        <i class="lni lni-investment"></i>
-        <h2>Innovative business
-            <span>Easy to customize</span>
-        </h2>
-        <div class="row">
-            <div class="col-4">    
-                <app-elmt [voiture]="myvoiture"></app-elmt>
-            </div>
-            <div class="col-4">    
-                <app-elmt [voiture]="myvoiture"></app-elmt>
-            </div>
-            <div class="col-4">    
-                <app-elmt [voiture]="myvoiture"></app-elmt>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4">    
-                <app-elmt [voiture]="myvoiture"></app-elmt>
-            </div>
-            <div class="col-4">    
-                <app-elmt [voiture]="myvoiture"></app-elmt>
-            </div>
-            <div class="col-4">    
-                <app-elmt [voiture]="myvoiture"></app-elmt>
-            </div>
-        </div>
+      <div class="section-title" data-aos="fade-left">
+        <h2>Portfolio</h2>
+        <p>
+            Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.
+             Sit sint consectetur velit. Quisquam quos quisquam cupiditate. 
+             Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.
+        </p>
+      </div>
+      <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200"></div>
+        <app-elmt *ngFor="let car of voitures" [voiture]="car"></app-elmt>
+
     </div>
-  </div>
-  
+</section>

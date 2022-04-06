@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Voiture } from '../models/voiture.model';
+import { VoitureService } from '../services/voitures.service';
 
 @Component({
   selector: 'app-elmt',
@@ -7,21 +9,17 @@ import { Voiture } from '../models/voiture.model';
   styleUrls: ['./elmt.component.scss']
 })
 export class ElmtComponent implements OnInit {
-  title!: string; 
-  description!: string;
-  createdDate!: Date;
-  price!: number;
-  imageUrl!: string;
   buttonText!: string;
   @Input() voiture!: Voiture;
 
+  constructor(private voitureService: VoitureService, private router: Router){}
+
   ngOnInit(){
-    this.title = "maester";
-    this.description = "developpeur fullstack a ibaas lab";
-    this.createdDate = new Date();
-    this.price = 19;
-    this.imageUrl = "C:\Users\Maester\Desktop\projet cr\crepe choco.jpg";
     this.buttonText= "View more!";
+  }
+
+  onContinue(){
+    this.router.navigateByUrl("pageDetail");
   }
 
 }

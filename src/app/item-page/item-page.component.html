@@ -1,0 +1,54 @@
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Catalogue Details</h2>
+        <ol>
+            <li><a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
+            <li><a routerLink="voitures" routerLinkActive="active">catalogue</a></li>
+            <li>Portfolio Details</li>
+        </ol>
+      </div>
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+   <!-- ======= Portfolio Details Section ======= -->
+   <section id="portfolio-details" class="portfolio-details">
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-8">
+          <div class="portfolio-details-slider swiper-container">
+            <div class="swiper-wrapper align-items-center">
+
+              <div class="swiper-slide">
+                <img [src]="voiture.imageUrl" [alt]="voiture.title">
+              </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="portfolio-info">
+            <h3>car information</h3>
+            <ul>
+              <li><strong>Name</strong>: {{ voiture.title | uppercase }}</li>
+              <li><strong>Description</strong>: {{ voiture.description }}</li>
+              <li><strong> date</strong>: {{ voiture.createdDate | date: 'dd MMMM yyyy HH:mm' }}</li>
+              <li><strong>price </strong>: <a href="#">{{ voiture.price | currency: 'XAF' }}</a></li>
+            </ul>
+          </div>
+          <div class="portfolio-description">
+            <h2>This is an example of categorie detail</h2>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Portfolio Details Section -->

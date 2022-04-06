@@ -7,6 +7,8 @@ import { ElmtComponent } from './elmt/elmt.component';
 import { ListPageComponent } from './list-page/list-page.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { ItemPageComponent } from './item-page/item-page.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { FooterComponent } from './footer/footer.component';
     ElmtComponent,
     ListPageComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LandingPageComponent,
+    ItemPageComponent
   ],
   imports: [
     BrowserModule,
