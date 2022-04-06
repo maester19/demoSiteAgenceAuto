@@ -1,10 +1,8 @@
-<div class="face-snap-card">
-    <h2>{{ voiture.title }}</h2>
-    <p>Mis en ligne le {{ voiture.createdDate }}</p>
-    <img [src]="voiture.imageUrl" [alt]="voiture.title">
+<div class="auto-card">
+    <h2>{{ voiture.title | uppercase }}</h2>
     <p>{{ voiture.description }}</p>
-    <p>
-        <button (click)="onSnap()">{{ buttonText }}</button>
-        🤌 {{ voiture.snaps }}
-      </p>
+    <img [src]="voiture.imageUrl" [alt]="voiture.title">
+    <p>Mis en ligne le {{ voiture.createdDate | date: 'dd MMMM yyyy, à HH:mm'}}</p>
+    <p><span>🤌 {{ voiture.price | currency: 'XAF' }}</span></p>
+    <a class="btn btn-outline-primary" routerLink="page">{{ buttonText }}</a>
 </div>

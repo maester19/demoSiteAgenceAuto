@@ -7,15 +7,31 @@ import { Voiture } from './models/voiture.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  @Input() myvoiture!:Voiture;
+  voitures!: Voiture[];
 
   ngOnInit(){
-    this.myvoiture = new Voiture(
-      'Archibald',
-      'Mon meilleur ami depuis tout petit !',
-      'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
-      new Date(),
-      0
-    );
+    this.voitures = [
+      {  
+        title:'Audi',
+        description: 'une hybride tout terrain !',
+        imageUrl: 'https://th.bing.com/th/id/R.020edc36b069e11f009d2db7003b08b9?rik=Rn73yQSfUt5%2fag&pid=ImgRaw&r=0',
+        createdDate: new Date(),
+        price: 40000
+      },
+      {  
+        title:'toyota',
+        description: 'voiture de ville et decampagne !',
+        imageUrl: 'https://th.bing.com/th/id/R.020edc36b069e11f009d2db7003b08b9?rik=Rn73yQSfUt5%2fag&pid=ImgRaw&r=0',
+        createdDate: new Date(),
+        price: 234000
+      },
+      {  
+        title:'Ferary',
+        description: 'le confort au service de la vitesse !',
+        imageUrl: 'https://th.bing.com/th/id/R.020edc36b069e11f009d2db7003b08b9?rik=Rn73yQSfUt5%2fag&pid=ImgRaw&r=0',
+        createdDate: new Date(),
+        price: 1223444
+      }
+    ];
   }
 }

@@ -3,6 +3,6 @@ export class Voiture {
                 public description: string,
                 public imageUrl: string,
                 public createdDate: Date,
-                public snaps: number) {
+                public price: number) {
     }
   }

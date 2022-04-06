@@ -1,1 +1,4 @@
-<app-elmt [voiture]="myvoiture"></app-elmt>
+<app-header></app-header>
+<app-elmt *ngFor="let car of voitures" [voiture]="car"></app-elmt>
+
+<app-footer></app-footer>

@@ -10,7 +10,7 @@ export class ElmtComponent implements OnInit {
   title!: string; 
   description!: string;
   createdDate!: Date;
-  snaps!: number;
+  price!: number;
   imageUrl!: string;
   buttonText!: string;
   @Input() voiture!: Voiture;
@@ -19,18 +19,9 @@ export class ElmtComponent implements OnInit {
     this.title = "maester";
     this.description = "developpeur fullstack a ibaas lab";
     this.createdDate = new Date();
-    this.snaps = 19;
+    this.price = 19;
     this.imageUrl = "C:\Users\Maester\Desktop\projet cr\crepe choco.jpg";
-    this.buttonText= "Oh Snap!";
+    this.buttonText= "View more!";
   }
 
-  onSnap() {
-    if (this.buttonText === 'Oh Snap!') {
-      this.voiture.snaps++;
-      this.buttonText = 'Oops, unSnap!';
-    } else {
-      this.voiture.snaps--;
-      this.buttonText = 'Oh Snap!';
-    }
-  }
 }
