@@ -15,7 +15,7 @@ export class ItemPageComponent implements OnInit {
 
   ngOnInit() {
     this.voiture = new Voiture (
-       4,
+       "4",
       "ma voiture",
       "une voiture hybride de luxe",
       "https://th.bing.com/th/id/R.020edc36b069e11f009d2db7003b08b9?rik=Rn73yQSfUt5%2fag&pid=ImgRaw&r=0",

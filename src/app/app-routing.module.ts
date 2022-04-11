@@ -5,8 +5,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ListPageComponent } from './list-page/list-page.component';
 
 const routes: Routes = [
-  { path: 'voitures', component: ListPageComponent },
   { path: '', component: LandingPageComponent },
+  { path: 'voitures', component: ListPageComponent },
   { path: 'pageDetail', component: ItemPageComponent }
 ];
 

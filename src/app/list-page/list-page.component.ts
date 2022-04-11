@@ -8,12 +8,18 @@ import { VoitureService } from '../services/voitures.service';
   styleUrls: ['./list-page.component.scss']
 })
 export class ListPageComponent implements OnInit {
-  voitures!: Voiture[];
+  @Input() voitures!: Voiture[];
 
   constructor(private voitureService: VoitureService){}
 
   ngOnInit() {
     this.voitures = this.voitureService.getAllVoiture();
+
+    // .subscribe(
+    //   data=>{
+    //     this.voitures = data;
+    //   }
+    // );
   }
 
 }

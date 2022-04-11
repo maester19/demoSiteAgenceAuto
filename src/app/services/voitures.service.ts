@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Voiture } from '../models/voiture.model';
 
 @Injectable({
@@ -7,7 +9,7 @@ import { Voiture } from '../models/voiture.model';
 export class VoitureService {
   voitures: Voiture[] = [
     {  
-      id:1,
+      id:'1',
       title:'Audi',
       description: 'une hybride tout terrain !',
       imageUrl: 'https://th.bing.com/th/id/R.020edc36b069e11f009d2db7003b08b9?rik=Rn73yQSfUt5%2fag&pid=ImgRaw&r=0',
@@ -15,7 +17,7 @@ export class VoitureService {
       price: 40000
     },
     {  
-      id:2,
+      id:'2',
       title:'toyota',
       description: 'voiture de ville et decampagne !',
       imageUrl: 'https://th.bing.com/th/id/R.020edc36b069e11f009d2db7003b08b9?rik=Rn73yQSfUt5%2fag&pid=ImgRaw&r=0',
@@ -23,7 +25,7 @@ export class VoitureService {
       price: 234000
     },
     {  
-      id:3,
+      id:'3',
       title:'Ferary',
       description: 'le confort au service de la vitesse !',
       imageUrl: 'https://th.bing.com/th/id/R.020edc36b069e11f009d2db7003b08b9?rik=Rn73yQSfUt5%2fag&pid=ImgRaw&r=0',
@@ -32,9 +34,15 @@ export class VoitureService {
     }
   ];
 
+  constructor( private _http: HttpClient ){}
+
   getAllVoiture(): Voiture[] {
     return this.voitures;
   }
+
+  // getAllVoiture(): Observable<any> {
+  //   return this._http.get('http://localhost:3000/api/voitures');
+  // }
 
   voitureById(voitureId: number): void{
   }
