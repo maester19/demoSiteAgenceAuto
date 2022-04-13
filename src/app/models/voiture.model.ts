@@ -1,6 +1,6 @@
 export class Voiture {
     constructor(
-      public id:number,
+      public _id:string,
       public title: string,
       public description: string,
       public imageUrl: string,

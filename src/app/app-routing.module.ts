@@ -7,7 +7,7 @@ import { ListPageComponent } from './list-page/list-page.component';
 const routes: Routes = [
   { path: 'voitures', component: ListPageComponent },
   { path: '', component: LandingPageComponent },
-  { path: 'pageDetail', component: ItemPageComponent }
+  { path: 'pageDetail/:id', component: ItemPageComponent }
 ];
 
 @NgModule({

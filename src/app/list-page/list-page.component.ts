@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable, Subscriber } from 'rxjs';
 import { Voiture } from '../models/voiture.model';
 import { VoitureService } from '../services/voitures.service';
 
@@ -9,11 +10,12 @@ import { VoitureService } from '../services/voitures.service';
 })
 export class ListPageComponent implements OnInit {
   voitures!: Voiture[];
+  cars!:Observable<Voiture[]>;
 
   constructor(private voitureService: VoitureService){}
 
   ngOnInit() {
-    this.voitures = this.voitureService.getAllVoiture();
+    this.cars = this.voitureService.getAllVoiture();
   }
 
 }

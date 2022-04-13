@@ -6,7 +6,7 @@
         <h2>Catalogue Details</h2>
         <ol>
             <li><a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
-            <li><a routerLink="voitures" routerLinkActive="active">catalogue</a></li>
+            <li><a routerLink="/voitures" routerLinkActive="active">catalogue</a></li>
             <li>Portfolio Details</li>
         </ol>
       </div>
@@ -18,7 +18,7 @@
    <section id="portfolio-details" class="portfolio-details">
     <div class="container">
 
-      <div class="row gy-4">
+      <div class="row gy-4" *ngIf="car | async as voiture">
 
         <div class="col-lg-8">
           <div class="portfolio-details-slider swiper-container">
@@ -40,7 +40,7 @@
               <li><strong>Name</strong>: {{ voiture.title | uppercase }}</li>
               <li><strong>Description</strong>: {{ voiture.description }}</li>
               <li><strong> date</strong>: {{ voiture.createdDate | date: 'dd MMMM yyyy HH:mm' }}</li>
-              <li><strong>price </strong>: <a href="#">{{ voiture.price | currency: 'XAF' }}</a></li>
+              <li><strong>price </strong>:{{ voiture.price | currency: 'XAF' }}</li>
             </ul>
           </div>
           <div class="portfolio-description">

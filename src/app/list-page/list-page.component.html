@@ -10,7 +10,7 @@
         </p>
       </div>
       <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200"></div>
-        <app-elmt *ngFor="let car of voitures" [voiture]="car"></app-elmt>
+        <app-elmt *ngFor="let car of cars |async" [voiture]="car"></app-elmt>
 
     </div>
 </section>
