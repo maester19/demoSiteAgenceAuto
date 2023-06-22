@@ -6,6 +6,20 @@
     <div id="intro" class="p-5 text-center bg-light">
       <h1 class="mb-3 h2">Tp Base de donnees</h1>
       <p class="mb-3">Site agence automobile</p>
+      <!-- Search bar -->
+      <div class="input-group text-center row">
+        <div class="col-4"></div>
+        <div class="col-4">
+          <div id="search-autocomplete" class="form-outline">
+            <input type="search" id="form1" class="form-control" placeholder="Recherche" [(ngModel)]="name"/>
+          </div>
+          <button type="button" class="btn btn-primary m-1" (click)="search()">
+            Recherche
+          </button>
+        </div>
+        <div class="col-4"></div>
+        
+      </div>
     </div>
     <!-- Jumbotron -->
   <!--Main Navigation-->

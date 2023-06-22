@@ -28,7 +28,7 @@ export class VoitureService {
   public getByName(name: any) {
     return new Promise((resolve, reject) => {
       this.http.get<any>(BackendService.url + this.url+'/getByName/'+ name).subscribe((response) => {
-        resolve(response.voiture);
+        resolve(response.cars);
       });
     });
   }
