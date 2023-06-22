@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable, Subscriber } from 'rxjs';
 import { Voiture } from '../models/voiture.model';
-import { VoitureService } from '../services/voitures.service';
+import { VoitureService } from '../services/voiture/voiture.service';
 
 @Component({
   selector: 'app-list-page',
@@ -8,18 +9,25 @@ import { VoitureService } from '../services/voitures.service';
   styleUrls: ['./list-page.component.scss']
 })
 export class ListPageComponent implements OnInit {
-  @Input() voitures!: Voiture[];
+  voitures!: Voiture[];
+  cars:any = [];
 
   constructor(private voitureService: VoitureService){}
 
   ngOnInit() {
-    this.voitures = this.voitureService.getAllVoiture();
+    this.getVoiture()
+  }
 
-    // .subscribe(
-    //   data=>{
-    //     this.voitures = data;
-    //   }
-    // );
+  getVoiture(){
+  	this.voitureService.getAll().then(response => {
+    	this.cars = response
+    });
+  }
+
+  delete(id: string){
+  	this.voitureService.delete(id).then(response => {
+  		this.getVoiture()
+  	})
   }
 
 }

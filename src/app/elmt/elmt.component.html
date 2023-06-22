@@ -1,13 +1,14 @@
-
-    <div class="portfolio-wrap auto-card">
-      <img [src]="voiture.imageUrl" class="img-fluid" [alt]="voiture.title">
-      <div class="portfolio-info">
-        <h4>{{ voiture.title | uppercase }}</h4>
-        <p>{{ voiture.description }}</p>
-        <p>Mis en ligne le {{ voiture.createdDate | date: 'dd MMMM yyyy, à HH:mm'}}</p>
-        <p><span>🤌 {{ voiture.price | currency: 'XAF' }}</span></p>
-        <div class="portfolio-links">
-          <button class="btn btn-outline-primary" (click)="onContinue()">{{ buttonText }}</button>
-        </div>
-      </div>
-    </div>
+<div class="card">
+  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+    <img src="assets/images/voiture.jpg" class="img-fluid" />
+    <a href="#!">
+      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+    </a>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ voiture.title | uppercase }}</h5>
+    <p><span>🤌 {{ voiture.price | currency: 'XAF' }}</span></p>
+    <p class="card-text">Mis en ligne le {{ voiture.createdAt | date: 'dd MMMM yyyy, à HH:mm'}}</p>
+    <button class="btn btn-primary" (click)="onContinue()">voir plus</button>
+  </div>
+</div>

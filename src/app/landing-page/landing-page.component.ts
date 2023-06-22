@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Observable, Subscriber } from 'rxjs';
+import { Voiture } from '../models/voiture.model';
+import { VoitureService } from '../services/voiture/voiture.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor() { }
+  voitures!: Voiture[];
+  cars:any = [];
 
-  ngOnInit(): void {
+  constructor(private voitureService: VoitureService){}
+
+  ngOnInit() {
+    this.voitureService.getAll().then(response => {
+    	this.cars = response
+    });
   }
-
 }

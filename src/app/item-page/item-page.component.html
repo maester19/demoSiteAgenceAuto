@@ -6,8 +6,8 @@
         <h2>Catalogue Details</h2>
         <ol>
             <li><a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
-            <li><a routerLink="voitures" routerLinkActive="active">catalogue</a></li>
-            <li>Portfolio Details</li>
+            <li><a routerLink="" routerLinkActive="active">catalogue</a></li>
+            <li>Portfolio Details: {{ car.title }}</li>
         </ol>
       </div>
 
@@ -18,14 +18,14 @@
    <section id="portfolio-details" class="portfolio-details">
     <div class="container">
 
-      <div class="row gy-4">
+      <div class="row gy-4" *ngIf="car">
 
         <div class="col-lg-8">
           <div class="portfolio-details-slider swiper-container">
             <div class="swiper-wrapper align-items-center">
 
               <div class="swiper-slide">
-                <img [src]="voiture.imageUrl" [alt]="voiture.title">
+                <img src="assets/images/voiture.jpg" [alt]="car.title">
               </div>
 
             </div>
@@ -37,10 +37,10 @@
           <div class="portfolio-info">
             <h3>car information</h3>
             <ul>
-              <li><strong>Name</strong>: {{ voiture.title | uppercase }}</li>
-              <li><strong>Description</strong>: {{ voiture.description }}</li>
-              <li><strong> date</strong>: {{ voiture.createdDate | date: 'dd MMMM yyyy HH:mm' }}</li>
-              <li><strong>price </strong>: <a href="#">{{ voiture.price | currency: 'XAF' }}</a></li>
+              <li><strong>Name</strong>: {{ car.title | uppercase }}</li>
+              <li><strong>Description</strong>: {{ car.description }}</li>
+              <li><strong> date</strong>: {{ car.createdAt | date: 'dd MMMM yyyy HH:mm' }}</li>
+              <li><strong>price </strong>:{{ car.price | currency: 'XAF' }}</li>
             </ul>
           </div>
           <div class="portfolio-description">

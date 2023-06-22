@@ -1,0 +1,78 @@
+<section id="portfolio" class="portfolio">
+    <div class="container">
+
+      <div class="section-title text-center" data-aos="fade-left">
+        <h2>Enregister une voiture</h2>
+      </div>
+
+      <form>
+      	<div class="row">
+      		<!-- Name input -->
+	      <div class="col-6 form-outline mb-4">
+	        <input
+	          type="text"
+	          name="title"
+	          id="form4Example1"
+	          class="form-control"
+	          placeholder="Car name"
+	          [(ngModel)]="car.title"
+	        />
+	        <label
+	          class="form-label"
+	          for="form4Example1"
+	          style="margin-left: 0px"
+	          >Nom de la voiture</label
+	        >
+	      </div>
+
+	      <!-- Email input -->
+	      <div class="col-6 form-outline mb-4">
+	        <input
+	          type="number"
+	          name="price"
+	          id="form4Example2"
+	          class="form-control"
+	          autocomplete="off"
+	          [(ngModel)]="car.price"
+	        />
+	        <label
+	          class="form-label"
+	          for="form4Example2"
+	          style="margin-left: 0px"
+	          >prix</label
+	        >
+	      </div>
+
+	      <!-- Message input -->
+	      <div class="col-12 form-outline mb-4">
+	        <textarea
+	          class="form-control"
+	          name="description"
+	          id="form4Example3"
+	          placeholder="Car description"
+	          [(ngModel)]="car.description"
+	        ></textarea>
+	        <label
+	          class="form-label"
+	          for="form4Example3"
+	          style="margin-left: 0px"
+	          >Description</label
+	        >
+	      </div>
+
+      	</div>
+
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary btn-block mb-4 m-1" (click)="submit()" *ngIf="id == 'new'">
+        Enregistrer
+      </button>
+      <!-- Update button -->
+      <button type="submit" class="btn btn-success btn-block mb-4 m-1" (click)="update()" *ngIf="id != 'new'">
+        Enregistrer
+      </button>
+      <!-- Back button -->
+      <button class="btn btn-dark btn-block mb-4 m-1" routerLink="/voitures">Retour</button>
+    </form>
+
+    </div>
+</section>
