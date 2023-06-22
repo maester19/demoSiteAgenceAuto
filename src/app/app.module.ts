@@ -9,8 +9,10 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ItemPageComponent } from './item-page/item-page.component';
-import { VoitureService } from './services/voitures.service';
+import { VoitureService } from './services/voiture/voiture.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FormVoitureComponent } from './form-voiture/form-voiture.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     LandingPageComponent,
-    ItemPageComponent
+    ItemPageComponent,
+    FormVoitureComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [VoitureService],

@@ -1,8 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Voiture } from '../models/voiture.model';
-import { VoitureService } from '../services/voitures.service';
+import { VoitureService } from '../services/voiture/voiture.service';
 
 @Component({
   selector: 'app-elmt',
@@ -10,14 +9,16 @@ import { VoitureService } from '../services/voitures.service';
   styleUrls: ['./elmt.component.scss']
 })
 export class ElmtComponent implements OnInit {
-  buttonText!: string;
-  @Input() voiture!: Voiture;
-  car!:Observable<Voiture>;
+  @Input() voiture!: any;
+  car!:any;
 
-  constructor(private voitureService: VoitureService, private router: Router){}
+  constructor(
+    private voitureService: VoitureService, 
+    private router: Router
+    ){}
 
   ngOnInit(){
-    this.buttonText= "View more!";
+    
   }
 
   onContinue(){

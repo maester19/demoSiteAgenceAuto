@@ -2,15 +2,35 @@
     <div class="container">
 
       <div class="section-title" data-aos="fade-left">
-        <h2>Portfolio</h2>
-        <p>
-            Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.
-             Sit sint consectetur velit. Quisquam quos quisquam cupiditate. 
-             Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.
-        </p>
+        <h2>liste des voitures</h2>
       </div>
-      <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200"></div>
-        <app-elmt *ngFor="let car of cars |async" [voiture]="car"></app-elmt>
 
+      <div class="portfolio-container" data-aos="fade-up" data-aos-delay="200">
+        <button class="btn btn-primary" routerLink="/addCar/new"> Ajouter une voiture</button>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nom</th>
+              <th scope="col">Prix</th>
+              <th scope="col">Date</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let car of cars; let i = index">
+              <th scope="row">{{ i }}</th>
+              <td>{{ car.title }}</td>
+              <td>{{ car.price }}</td>
+              <td>{{ car.createdAt| date }}</td>
+              <td> 
+                <button class="btn btn-primary" [routerLink]="'/addCar/'+car._id">Edit</button>
+                <button class="btn btn-danger m-1" (click)="delete(car._id)">delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h5 *ngIf="cars.length == 0"> < Pas de voiture dans la liste > </h5>
+      </div>
     </div>
 </section>

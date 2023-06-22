@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Voiture } from '../models/voiture.model';
-import { VoitureService } from '../services/voitures.service';
+import { VoitureService } from '../services/voiture/voiture.service';
 
 @Component({
   selector: 'app-item-page',
@@ -11,15 +11,18 @@ import { VoitureService } from '../services/voitures.service';
 })
 export class ItemPageComponent implements OnInit {
 
+  car:any;
   constructor(
     private voitureService : VoitureService, 
-    private route: ActivatedRoute) { }
-  // @Input() voiture!: Voiture;
-  car!:Observable<Voiture>;
+    private route: ActivatedRoute
+    ) { }
 
   ngOnInit() {
+    this.car = this.voitureService.createEmptyVoiture()
     const id = this.route.snapshot.params['id'];
-    this.car = this.voitureService.getVoiture(id); 
+    this.voitureService.getOne(id).then(response => {
+      this.car = response
+    }); 
   }
 
 }
